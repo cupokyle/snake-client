@@ -14,6 +14,10 @@ const connect = function () {
     console.log(data.toString());
     conn.end();
   })
+  conn.on("connect", () => {
+    console.log("Successful Connection Achieved.")
+    conn.write("Name: KFC")
+  })
 
   return conn;
 };
